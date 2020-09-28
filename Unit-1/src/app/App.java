@@ -2,28 +2,65 @@ package app;
 
 import java.util.Scanner;
 
-
 public class App {
     public static void main(String[] args) throws Exception {
-        
-        for(int i =10; i <= 20; i = i +1){
-            System.out.println("The count is " + i); 
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("What is 10+10");
+        int user1 = input.nextInt();
+            if (user1 == 20) {
+                System.out.println("Answer Correct");
+            }
+            else {
+                System.out.println("Answer Incorrect");
+            }
+        System.out.println("What  is 5x5");
+        int user2 = input.nextInt();
+            if  (user2 == 25) {
+                System.out.println("Answer Correct");
+            }
+            else {
+                System.out.println("Answer Incorrect");
+            }
+        System.out.println("What  is 100/10");
+        int user3 = input.nextInt();
+            if  (user3 == 10) {
+                System.out.println("Answer Correct");
+            }
+            else {
+                System.out.println("Answer Incorrect");
+            }
+        System.out.println("What  is 30-5");
+        int user4 = input.nextInt();
+            if  (user4 == 25) {
+                System.out.println("Answer Correct");
+            }
+            else {
+                System.out.println("Answer Incorrect");
+            }
+        System.out.println("What  is 4x10");
+        int user5 = input.nextInt();
+            if  (user5 == 40) {
+                System.out.println("Answer Correct");
+            }
+            else {
+                System.out.println("Answer Incorrect");
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
-         for(int a =10; a <= 100; a = a +1){
-            System.out.println("The count is " + a);
-        }
-
-         for(int b =1000; b <= 256000; b = b +1){
-            System.out.println("The count is " + b);
-        }
-
-        for(int c =11; c <= 12; c = c +1){
-            System.out.println("The count is " + c);
-        }
-
-        for(int d =10; d >= 0; d = d +1){
-            System.out.println("The count is " + d);
-        }
     }
-}
