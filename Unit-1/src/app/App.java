@@ -11,6 +11,7 @@ public class App {
         int user1 = input.nextInt();
             if (user1 == 20) {
                 System.out.println("Answer Correct");
+                int correct = 1;
             }
             else {
                 System.out.println("Answer Incorrect");
@@ -19,6 +20,7 @@ public class App {
         int user2 = input.nextInt();
             if  (user2 == 25) {
                 System.out.println("Answer Correct");
+                 int correct2 = 1;
             }
             else {
                 System.out.println("Answer Incorrect");
@@ -27,6 +29,7 @@ public class App {
         int user3 = input.nextInt();
             if  (user3 == 10) {
                 System.out.println("Answer Correct");
+                int correct3 = 1;
             }
             else {
                 System.out.println("Answer Incorrect");
@@ -35,6 +38,7 @@ public class App {
         int user4 = input.nextInt();
             if  (user4 == 25) {
                 System.out.println("Answer Correct");
+                int correct4 = 1;
             }
             else {
                 System.out.println("Answer Incorrect");
@@ -43,10 +47,13 @@ public class App {
         int user5 = input.nextInt();
             if  (user5 == 40) {
                 System.out.println("Answer Correct");
+                int correct5 = 1;
             }
             else {
                 System.out.println("Answer Incorrect");
             }
+        int total = correct + correct2 + correct3 + correct4 + correct5
+        System.out.println("Your Total score is ");
 
 
 
@@ -63,4 +70,4 @@ public class App {
 
         }
 
-    }
+}
