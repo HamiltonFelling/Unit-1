@@ -55,7 +55,10 @@ public class App {
             System.out.println("Answer Incorrect");
         }
         int total = correct + correct2 + correct3 + correct4 + correct5;
-        System.out.println("Your Total score is " + total + "/5");
+        int percent = total * 20;
+        
+        System.out.println("Your Total score is " + total + "/5 " + percent + "%");
+      
     }
 
 }
