@@ -8,24 +8,37 @@ public class App {
 
         Scanner input = new Scanner(System.in);
 
-        int pp = 1;
+        System.out.println("Please Enter a Number");
+        int aa = input.nextInt();
+        System.out.println("Please Enter in Another Number");
+        int bb = input.nextInt();
+        int pp = 0;
+        int cc = bb;
+        int dd = aa;
 
-        System.out.println("Please guess the number 1-100");
-        while (pp < 2) {
-        int rr = input.nextInt();
-
-        if (rr == 54) {
-            System.out.println("You have guessed the right number '54'.");
-            pp = pp + 2;
+        if (bb < aa) {
+            cc = aa;
+            dd = bb;
         }
-        else if (rr <= 53) {
-            System.out.println("Low");
+        
+        if (aa % 2 == 0) {
+            pp = 4;
         }
-        else if (rr >= 55) {
-            System.out.println("High");
+        else if (aa % 2 == 1) {
+            pp = 3;
         }
 
+        if (pp == 4) {
+            for (int i = dd; i < cc; i = i + 2) {
+                System.out.println(i);
+            }
         }
+        
 
+
+
+
+
+
+        }
     }
-}
