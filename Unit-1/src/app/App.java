@@ -20,11 +20,11 @@ public class App {
             cc = aa;
             dd = bb;
         }
-        
-        if (aa % 2 == 0) {
+
+        if (dd % 2 == 0) {
             pp = 4;
         }
-        else if (aa % 2 == 1) {
+        if (dd % 2 == 1) {
             pp = 3;
         }
 
@@ -33,12 +33,10 @@ public class App {
                 System.out.println(i);
             }
         }
-        
-
-
-
-
-
-
+        if (pp == 3) {
+            for (int i = dd + 1; i < cc; i = i + 2) {
+                System.out.println(i);
+            }
         }
     }
+}
