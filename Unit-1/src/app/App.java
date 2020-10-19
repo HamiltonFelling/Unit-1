@@ -8,35 +8,31 @@ public class App {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Please Enter a Number");
-        int aa = input.nextInt();
-        System.out.println("Please Enter in Another Number");
-        int bb = input.nextInt();
-        int pp = 0;
-        int cc = bb;
-        int dd = aa;
+        System.out.println("Welcome to Roulette");
+        System.out.println("ROUND 1");
+        int a = 0;
+        String inside = "inside";
+        String outside = "outside";
+        int c = 1;
 
-        if (bb < aa) {
-            cc = aa;
-            dd = bb;
-        }
+        
 
-        if (dd % 2 == 0) {
-            pp = 4;
-        }
-        if (dd % 2 == 1) {
-            pp = 3;
-        }
-
-        if (pp == 4) {
-            for (int i = dd; i < cc; i = i + 2) {
-                System.out.println(i);
+        while (a < 10) {
+            System.out.println("Would you like to make an inside or outside bet?");
+            String b = input.nextLine();
+            if (b.equals(inside)) {
+                while (b =)
+                System.out.println("Please enter the number you want to bet on '1 - 36'");
+                String d = input.nextLine();
+                
+            } else if (b.equals(outside)) {
+            } else {
+                System.out.println("invalid statement, Please try again.");
             }
-        }
-        if (pp == 3) {
-            for (int i = dd + 1; i < cc; i = i + 2) {
-                System.out.println(i);
             }
+
         }
+
     }
+
 }
