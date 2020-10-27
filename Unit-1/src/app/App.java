@@ -7,52 +7,50 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         Scanner input = new Scanner(System.in);
-
-        System.out.println("Welcome to Roulette");
-        System.out.println("ROUND 1");
         
-        int a = 10;
-        int c = 5;
-
         String inside = "inside";
         String outside = "outside";
 
         int max = 36;
         int min = 0;
         int range = max - min + 1;
+        int balance = 5;
+        int round  = 1;
 
-        while (a <= 10 && a > 0) {
+        String betnum[] = {"bet1", "bet2", "bet3", "bet4", "bet5", "bet6", "bet7", "bet8", "bet9", "bet10"};
 
+        System.out.println("Welcome to Roulette");
+        System.out.println("ROUND " + round);
+
+        for (int i = 0; i < betnum.length; i++){
             System.out.println("Would you like to make an inside or outside bet?");
             String b = input.nextLine();
+            int rand = (int)(Math.random()* range) + max;
 
             if (b.equals(inside)) {
                 System.out.println("What number would you like to bet on");
-                int g = input.nextInt();
+                int num = input.nextInt();
+
                 System.out.println("How much would you like to bet");
-                int h = input.nextInt();
+                int betamo = input.nextInt();
+            if (betamo <= balance){
+                System.out.println("Would you like to make another bet?");
+                String amobet = input.nextLine();
 
-                int rand = (int)(Math.random()* range) + max;
-                
-                if (h <= c){
-                    System.out.println("Would you like to make another bet? yes or no");
-                    String i = input.nextLine();
-                    if (i.equals("yes")) {
+            if (amobet.equals("no")){
 
-
-
-
-
-
-
-
-
-
-
-                    } else if (i.equals("no")) {
-                    } else {
-                        System.out.println("invalid statement, Please try again.");
-                    }
+                if (betamo == rand){
+                    balance = balance * 35;
+                    betamo = balance - betamo;
+                }
+                else{
+                    balance = balance - betamo;
+                }
+            }
+        }
+            else {
+                System.out.println("Insufficient balance please try again.");
+            }
 
 
 
@@ -63,16 +61,16 @@ public class App {
 
 
 
-
-
-
-                } else {
-                        System.out.println("You do not have enough balance, Immediate cash out.");
-                        a = 100;
-              }
          
              } else if (b.equals(outside)) {
-             } else {
+             } 
+             
+             
+             
+             
+             
+             
+             else {
                     System.out.println("invalid statement, Please try again.");
             }
 
