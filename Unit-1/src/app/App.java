@@ -16,53 +16,61 @@ public class App {
         int range = max - min + 1;
         int balance = 5;
         int round  = 1;
+        int results = 1;
+        int bet = 9;
 
-        String betnum[] = {"bet1", "bet2", "bet3", "bet4", "bet5", "bet6", "bet7", "bet8", "bet9", "bet10"};
+        int betamo[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         System.out.println("Welcome to Roulette");
         System.out.println("ROUND " + round);
 
-        for (int i = 0; i < betnum.length; i++){
+        int rand = (int)(Math.random()* range) + max;
+    while (bet <= 9)
+        for (int i = 0; i < betamo.length; i++){
             System.out.println("Would you like to make an inside or outside bet?");
             String b = input.nextLine();
-            int rand = (int)(Math.random()* range) + max;
 
             if (b.equals(inside)) {
                 System.out.println("What number would you like to bet on");
+                
                 int num = input.nextInt();
-
-                System.out.println("How much would you like to bet");
-                int betamo = input.nextInt();
-            if (betamo <= balance){
-                System.out.println("Would you like to make another bet?");
-                String amobet = input.nextLine();
-
-            if (amobet.equals("no")){
-
-                if (betamo == rand){
-                    balance = balance * 35;
-                    betamo = balance - betamo;
-                }
-                else{
-                    balance = balance - betamo;
-                }
+                    while (1 < 2){
+                        System.out.println("How much would you like to bet");
+                     betamo[i] = input.nextInt();
+                    if (betamo[i] <= balance){
+                        break;}
+                    else if (betamo[i] >= balance) {
+                        System.out.println("Insufficient Balance try again, your balance is $" + balance + ".");
+            }
+                    else {
+                        System.out.println("Invalid statement try again");
             }
         }
+            while (1 < 2){
+                System.out.println("Would you like to make another bet? You have " + bet + " bets remaining." );
+                String amobet = input.nextLine();
+            
+            if(amobet.equals("yes")){
+                break;
+            }
+
+            else if (amobet.equals("no")){
+            System.out.println("RESULTS");
+            System.out.println("You have rolled a " + rand + ".");
+                }
             else {
-                System.out.println("Insufficient balance please try again.");
+                System.out.println("Invalid statement try again");
+            }
+        }
+            bet = bet - 1;
+
             }
 
 
+            
+        
 
-
-
-
-
-
-
-
-         
-             } else if (b.equals(outside)) {
+             else if (b.equals(outside)) {
              } 
              
              
@@ -73,10 +81,8 @@ public class App {
              else {
                     System.out.println("invalid statement, Please try again.");
             }
-
-
-
-        
         }
+
     }
 }
+
