@@ -21,6 +21,7 @@ public class App {
         int done = 0;
 
         int betamo[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        String color[] = {"green","red","black","red","black","red,","black","red","black","red","black","black","red","black","red","black","red","black","red","red","black","red","black","red","black","red"}
 
         boolean betSuccess = false;
         boolean anobet = false;
@@ -31,6 +32,7 @@ public class App {
         int rand = (int) (Math.random() * range) + max;
 
         for (int i = 0; i < betamo.length; i++) {
+            
             anobet = false;
             System.out.println("Would you like to make an inside or outside bet?");
             String b = input.nextLine();
@@ -58,6 +60,7 @@ public class App {
             }
 
             else if (b.equals(outside)) {
+                System.out.println("What number would you like to bet on?");
 
             }
 
@@ -65,7 +68,7 @@ public class App {
                 System.out.println("invalid statement, Please try again.");
             }
 
-            
+
                 while (anobet == false) {
                     System.out.println("Would you like to make another bet? You have " + bet + " bets remaining.");
                     String amobet = input.nextLine();
