@@ -21,10 +21,12 @@ public class App {
         int done = 0;
 
         int betamo[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        String color[] = {"green","red","black","red","black","red,","black","red","black","red","black","black","red","black","red","black","red","black","red","red","black","red","black","red","black","red"}
-
-        boolean betSuccess = false;
-        boolean anobet = false;
+        int color[] = {0,1,2,12,1,2,1,2,1,2,2,1,2,1,2,1,2,1,1,2,1,2,1,2,1,2,1,2,2,1,2,1,2,1,2,1};
+        //0=green 1=red 2=black
+        int betnum[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        int colorbet[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        
+        
 
         System.out.println("Welcome to Roulette");
         System.out.println("ROUND " + round);
@@ -32,15 +34,15 @@ public class App {
         int rand = (int) (Math.random() * range) + max;
 
         for (int i = 0; i < betamo.length; i++) {
-            
-            anobet = false;
+            boolean betSuccess = false;
+            boolean anobet = false;
             System.out.println("Would you like to make an inside or outside bet?");
             String b = input.nextLine();
 
             if (b.equals(inside)) {
                 System.out.println("What number would you like to bet on");
 
-                int num = input.nextInt();
+                betnum[i] = input.nextInt();
                 input.nextLine();
                 while (betSuccess == false) {
                     System.out.println("How much would you like to bet");
@@ -60,7 +62,16 @@ public class App {
             }
 
             else if (b.equals(outside)) {
-                System.out.println("What number would you like to bet on?");
+                System.out.println("What color would you like to bet on?");
+                colorbet[i] = input.nextInt();
+                input.nextLine();
+                if (colorbet[i] <= balance) {
+                        betSuccess = true;
+                    } else if (betamo[i] >= balance) {
+                        System.out.println("Insufficient Balance try again, your balance is $" + balance + ".");
+                    } else {
+                        System.out.println("Invalid statement try again");
+                    }
 
             }
 
@@ -86,6 +97,15 @@ public class App {
                     } else {
                         System.out.println("Invalid statement try again");
                     }
+                if (done == 1){
+                System.out.println("You have rolled a " + rand + ".");
+                    for (i = 0; i < betamo.length; i++){
+                        if (betnum[i] > 0){
+                            System.out.println("Bet ");
+                            
+                        }
+                    }
+                }
                 }
         }
 
