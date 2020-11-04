@@ -16,12 +16,12 @@ public class App {
         int range = max - min + 1;
         int balance = 5;
         int round = 1;
-        int results = 1;
         int bet = 9;
         int done = 0;
+        int bet1 = 0;
 
         int betamo[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        int color[] = {0,1,2,12,1,2,1,2,1,2,2,1,2,1,2,1,2,1,1,2,1,2,1,2,1,2,1,2,2,1,2,1,2,1,2,1};
+        int color[] = {0,1,2,1,2,1,2,1,2,1,2,2,1,2,1,2,1,2,1,1,2,1,2,1,2,1,2,1,2,2,1,2,1,2,1,2,1};
         //0=green 1=red 2=black
         int betnum[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         int colorbet[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -36,6 +36,7 @@ public class App {
         for (int i = 0; i < betamo.length; i++) {
             boolean betSuccess = false;
             boolean anobet = false;
+            boolean colorsucc = false;
             System.out.println("Would you like to make an inside or outside bet?");
             String b = input.nextLine();
 
@@ -63,8 +64,28 @@ public class App {
 
             else if (b.equals(outside)) {
                 System.out.println("What color would you like to bet on?");
-                colorbet[i] = input.nextInt();
+                String color1 = input.nextLine();
                 input.nextLine();
+                while (colorsucc = false){
+                if(color1.equals("red")){
+                    colorbet[i] = 1;
+                    colorsucc = true;
+                }
+                else if(color1.equals("black")){
+                    colorbet[i] = 2;
+                    colorsucc = true;
+                }
+                else {
+                    System.out.println("Invalid statement please re-enter color");
+                }
+            }
+
+
+                
+
+
+
+
                 if (colorbet[i] <= balance) {
                         betSuccess = true;
                     } else if (betamo[i] >= balance) {
@@ -97,13 +118,44 @@ public class App {
                     } else {
                         System.out.println("Invalid statement try again");
                     }
+                    bet1 = bet1 + 1;
+                    
                 if (done == 1){
                 System.out.println("You have rolled a " + rand + ".");
+                if(colorbet[rand] == 1) {
+                    System.out.println("Color = Red");
+                }
+                else if(colorbet[rand] == 2) {
+                    System.out.println("Color = Black");
+                }
                     for (i = 0; i < betamo.length; i++){
                         if (betnum[i] > 0){
-                            System.out.println("Bet ");
+                            System.out.println("Bet " + bet1 + " of " + betamo[i]);
+                            if(betnum[i] == rand){
+                                System.out.println("has won, $" + betnum[i]);
+                                balance = balance + betnum[i];
+                            }
+                            else {
+                                System.out.println("has lost, $" + betnum[i]);
+                                balance = balance - betnum[i];
+                            }
+                            
                             
                         }
+                        else if (colorbet[i] == color[i]){
+                            System.out.println("Bet " + bet1 + " of " + betamo[i]);
+                            System.out.println("has won, $" + betnum[i]);
+                            balance = balance + betnum[i];
+
+                        }
+                        else{
+                            System.out.println("Bet " + bet1 + " of " + betamo[i]);
+                            System.out.println("has lost, $" + betnum[i]);
+                            balance = balance - betnum[i];
+                        }
+                        if (balance == 0);
+                        System.out.println("Your balance is $0");
+                        
                     }
                 }
                 }
